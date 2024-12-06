@@ -5,6 +5,13 @@ import '../constants/my_colors.dart';
 class MyTheme {
   static ThemeData lightTheme = ThemeData(
     useMaterial3: false,
+    bottomSheetTheme: const BottomSheetThemeData(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20),
+        ),
+      ),
+    ),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
         backgroundColor: MyColor.primerColor),
     scaffoldBackgroundColor: MyColor.lightColor,
@@ -22,14 +29,15 @@ class MyTheme {
       titleLarge: TextStyle(
           fontSize: 22, fontWeight: FontWeight.w700, color: Colors.white),
       titleMedium: TextStyle(
-          fontSize: 20, fontWeight: FontWeight.w700, color: Colors.white),
+          fontSize: 20,
+          fontWeight: FontWeight.w700,
+          color: MyColor.primerColor),
       titleSmall: TextStyle(
-          fontSize: 18, fontWeight: FontWeight.w700, color: Colors.white),
+          fontSize: 18, fontWeight: FontWeight.w700, color: Colors.black),
     ),
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: false,
-
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
         backgroundColor: MyColor.primerColor),
     scaffoldBackgroundColor: MyColor.darkColor,

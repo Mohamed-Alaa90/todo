@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:todo/core/thems/theme.dart';
-import 'package:todo/core/ui_helpers/bottom_sheets.dart';
+import 'package:todo/screens/setting/setting.dart';
+import 'package:todo/screens/tasks/tasks_list.dart';
+
+import '../tasks/add_task_bottom_sheet.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -10,6 +13,7 @@ class Home extends StatefulWidget {
 }
 
 int selectIndex = 0;
+//final List<Widget> screens = [Setting(), TasksListScreen()];
 
 class _HomeState extends State<Home> {
   @override
@@ -63,7 +67,17 @@ class _HomeState extends State<Home> {
             ],
           ),
         ),
+        body: selectIndex == 0 ? TasksListScreen() : Setting(),
       ),
+    );
+  }
+
+  void showCustomBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      context: context,
+      builder: (context) => AddTaskBottomSheet(),
     );
   }
 }
