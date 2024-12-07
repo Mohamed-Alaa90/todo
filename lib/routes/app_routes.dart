@@ -8,7 +8,7 @@ class AppRoutes {
     switch (settings.name) {
       case splashScreen:
         return MaterialPageRoute(
-          builder: (_) => Splash(),
+          builder: (_) => const Splash(),
         );
 
       case homeScreen:

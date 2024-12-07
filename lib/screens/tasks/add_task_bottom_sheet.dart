@@ -92,7 +92,6 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState?.validate() == true) {}
-                    Navigator.of(context).pop();
                   },
                   child: const Text("Add"),
                 )
