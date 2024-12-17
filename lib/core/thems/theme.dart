@@ -15,6 +15,7 @@ class MyTheme {
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
         backgroundColor: MyColor.primerColor),
     scaffoldBackgroundColor: MyColor.lightColor,
+
     appBarTheme: const AppBarTheme(
       toolbarHeight: 157.0,
       backgroundColor: MyColor.primerColor,

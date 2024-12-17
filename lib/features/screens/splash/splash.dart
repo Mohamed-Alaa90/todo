@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-import '../../../core/constants/strings.dart';
+import '../../../../core/constants/strings.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -16,7 +16,7 @@ class _SplashState extends State<Splash> {
     Timer(
       const Duration(milliseconds: 2000),
       () {
-        Navigator.popAndPushNamed(context, homeScreen);
+        Navigator.popAndPushNamed(context, registerScreen);
       },
     );
     super.initState();
