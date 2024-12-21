@@ -14,6 +14,7 @@ class CustomTextFormField extends StatelessWidget {
   final ValueChanged<String>? onChanged; // Change to ValueChanged<String>
   final int? maxLines;
   final TextInputAction? textInputAction;
+  final InputDecoration? decoration;
 
   const CustomTextFormField({
     super.key,
@@ -29,13 +30,15 @@ class CustomTextFormField extends StatelessWidget {
     this.maxLines,
     this.textInputAction,
     this.labelText,
-    this.onChanged, // Ensure onChanged is required and has a ValueChanged<String> type
+    this.onChanged,
+    this.decoration, // Ensure onChanged is required and has a ValueChanged<String> type
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onChanged: onChanged, // Directly pass the onChanged callback here
+      onChanged: onChanged,
+      // Directly pass the onChanged callback here
       textInputAction: textInputAction,
       maxLines: maxLines,
       style: style,
@@ -52,9 +55,9 @@ class CustomTextFormField extends StatelessWidget {
         prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
         suffixIcon: suffixIcon != null
             ? IconButton(
-          icon: Icon(suffixIcon),
-          onPressed: onSuffixPressed,
-        )
+                icon: Icon(suffixIcon),
+                onPressed: onSuffixPressed,
+              )
             : null,
       ),
     );

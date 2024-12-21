@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:todo/features/screens/home/home.dart';
-import 'package:todo/features/screens/register/register.dart';
-import 'package:todo/features/screens/splash/splash.dart';
+import 'package:todo/screens/home/home.dart';
+import 'package:todo/screens/register/register.dart';
 import '../core/constants/strings.dart';
-import '../features/screens/login/login.dart';
+import '../screens/login/login.dart';
+import '../screens/splash/splash.dart';
 
 class AppRoutes {
   Route? generateRoute(RouteSettings settings) {
