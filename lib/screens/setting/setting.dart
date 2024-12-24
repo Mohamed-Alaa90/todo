@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/my_colors.dart';
@@ -21,7 +23,12 @@ class Setting extends StatelessWidget {
             style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
-
+        ElevatedButton(
+          onPressed: () {
+            FirebaseAuth.instance.signOut();
+          },
+          child: Text("Sign out"),
+        )
       ],
     );
   }

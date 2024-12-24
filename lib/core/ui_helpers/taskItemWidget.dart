@@ -59,7 +59,7 @@ class TaskItemWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
                 color: MyColor.primerColor,
               ),
-             padding: EdgeInsets.symmetric(horizontal: 15),
+             padding: const EdgeInsets.symmetric(horizontal: 15),
               child: const Icon(
                 Icons.check,
                 color: Colors.white,

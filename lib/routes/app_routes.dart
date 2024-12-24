@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/auth/auth.dart';
 import 'package:todo/screens/home/home.dart';
 import 'package:todo/screens/register/register.dart';
 import '../core/constants/strings.dart';
@@ -26,6 +27,10 @@ class AppRoutes {
       case registerScreen:
         return MaterialPageRoute(
           builder: (_) => Register(),
+        );
+      case authScreen:
+        return MaterialPageRoute(
+          builder: (_) => Auth(),
         );
     }
     return null;

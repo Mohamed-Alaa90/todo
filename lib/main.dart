@@ -1,9 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:todo/routes/app_routes.dart';
-import 'package:todo/core/thems/theme.dart';
-import 'core/constants/strings.dart';
+import 'package:todo/src/my_app.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     MyApp(
       AppRoutes(),
@@ -11,18 +16,3 @@ void main() {
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp(this.appRoutes, {super.key});
-
-  final AppRoutes appRoutes;
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: MyTheme.lightTheme,
-      initialRoute: homeScreen,
-      onGenerateRoute: appRoutes.generateRoute,
-    );
-  }
-}

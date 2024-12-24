@@ -16,7 +16,7 @@ class _SplashState extends State<Splash> {
     Timer(
       const Duration(milliseconds: 2000),
       () {
-        Navigator.popAndPushNamed(context, registerScreen);
+        Navigator.popAndPushNamed(context, authScreen);
       },
     );
     super.initState();
