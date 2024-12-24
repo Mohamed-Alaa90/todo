@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todo/auth/auth.dart';
 import '../core/constants/strings.dart';
 import '../core/thems/theme.dart';
 import '../routes/app_routes.dart';

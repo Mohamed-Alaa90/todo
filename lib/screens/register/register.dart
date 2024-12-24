@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:todo/core/constants/my_colors.dart';
 import 'package:todo/core/constants/strings.dart';
 
-import '../../../core/ui_helpers/text_form_field.dart';
 
 class Register extends StatefulWidget {
   Register({super.key});

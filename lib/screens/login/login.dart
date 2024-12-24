@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:todo/core/constants/strings.dart';
 import '../../../core/constants/my_colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
