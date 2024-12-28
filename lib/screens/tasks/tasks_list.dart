@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo/core/constants/my_colors.dart';
-import 'package:todo/core/ui_helpers/customCalendar.dart';
-import 'package:todo/core/ui_helpers/taskItemWidget.dart';
+import 'package:todo/core/ui_helpers/custom_calendar.dart';
+import 'package:todo/screens/tasks/taskItem_Widget.dart';
 
 class TasksListScreen extends StatefulWidget {
   const TasksListScreen({super.key});
@@ -28,7 +28,8 @@ class _TasksListScreenState extends State<TasksListScreen> {
                 width: double.infinity,
                 color: MyColor.primerColor,
                 height: mediaQuery.height * 0.22,
-                padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 60),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 60),
                 child: Text(
                   'To Do List',
                   style: Theme.of(context).textTheme.titleLarge,
@@ -45,16 +46,13 @@ class _TasksListScreenState extends State<TasksListScreen> {
             ],
           ),
         ),
-
-        Expanded(child: ListView(
+        Expanded(
+            child: ListView.builder(
+          itemBuilder: (context, index) {
+            return TaskItemWidget();
+          },
           padding: EdgeInsets.zero,
-          children: const [
-            TaskItemWidget(),
-            TaskItemWidget(),
-            TaskItemWidget(),
-            TaskItemWidget(),
-            TaskItemWidget(),
-          ],
+          itemCount: 30,
         ))
       ],
     );

@@ -16,21 +16,21 @@ class AppRoutes {
 
       case homeScreen:
         return MaterialPageRoute(
-          builder: (_) => Home(),
+          builder: (_) => const Home(),
         );
 
       case loginScreen:
         return MaterialPageRoute(
-          builder: (_) => Login(),
+          builder: (_) =>  Login(),
         );
 
       case registerScreen:
         return MaterialPageRoute(
-          builder: (_) => Register(),
+          builder: (_) =>  Register(),
         );
       case authScreen:
         return MaterialPageRoute(
-          builder: (_) => Auth(),
+          builder: (_) => const Auth(),
         );
     }
     return null;

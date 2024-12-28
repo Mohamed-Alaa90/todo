@@ -24,8 +24,6 @@ class _SplashState extends State<Splash> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Image.asset(fit: BoxFit.fill, "assets/splash_light.png"),
-    );
+    return Image.asset(fit: BoxFit.fill, "assets/splash_light.png");
   }
 }

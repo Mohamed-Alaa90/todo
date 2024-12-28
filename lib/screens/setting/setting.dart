@@ -26,7 +26,7 @@ class Setting extends StatelessWidget {
           onPressed: () {
             FirebaseAuth.instance.signOut();
           },
-          child: Text("Sign out"),
+          child: const Text("Sign out"),
         )
       ],
     );

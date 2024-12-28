@@ -17,10 +17,8 @@ class Auth extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           } else if (snapshot.hasData) {
-            // إذا كان المستخدم مسجلاً الدخول، انتقل إلى شاشة الرئيسية
             return const Home();
           } else {
-            // إذا لم يكن المستخدم مسجلاً الدخول، انتقل إلى شاشة تسجيل الدخول
             return const Login();
           }
         },

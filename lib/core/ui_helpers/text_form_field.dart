@@ -15,7 +15,7 @@ class CustomTextFormField extends StatelessWidget {
   final int? maxLines;
   final TextInputAction? textInputAction;
   final InputDecoration? decoration;
-
+final bool? obscureText;
   const CustomTextFormField({
     super.key,
     this.controller,
@@ -31,7 +31,7 @@ class CustomTextFormField extends StatelessWidget {
     this.textInputAction,
     this.labelText,
     this.onChanged,
-    this.decoration, // Ensure onChanged is required and has a ValueChanged<String> type
+    this.decoration, this.obscureText,  // Ensure onChanged is required and has a ValueChanged<String> type
   });
 
   @override
