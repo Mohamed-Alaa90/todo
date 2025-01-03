@@ -1,6 +1,8 @@
 import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:todo/core/constants/my_colors.dart';
+import 'package:todo/provider/list_provider.dart';
 
 class CustomCalendar extends StatelessWidget {
   final DateTime? selectDate;
@@ -14,6 +16,7 @@ class CustomCalendar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var listProvider = Provider.of<ListProvider>(context);
     return EasyInfiniteDateTimeLine(
       timeLineProps: const EasyTimeLineProps(
         separatorPadding: 15,
@@ -67,7 +70,7 @@ class CustomCalendar extends StatelessWidget {
       ),
       firstDate: DateTime(2025, 1, 1),
       lastDate: DateTime(2030, 3, 18),
-      focusDate: selectDate,
+      focusDate: listProvider.selectedDate,
       onDateChange: onDateChange,
     );
   }

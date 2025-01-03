@@ -1,7 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:todo/core/constants/my_colors.dart';
 import 'package:todo/core/ui_helpers/custom_calendar.dart';
-import 'package:todo/screens/tasks/taskItem_Widget.dart';
+import 'package:todo/model/task_model.dart';
+import 'package:todo/provider/list_provider.dart';
+import 'package:todo/screens/tasks/task_item.dart';
+import 'package:todo/utils/firebase_utils.dart';
 
 class TasksListScreen extends StatefulWidget {
   const TasksListScreen({super.key});
@@ -15,6 +20,10 @@ DateTime? selectDate;
 class _TasksListScreenState extends State<TasksListScreen> {
   @override
   Widget build(BuildContext context) {
+    var listProvider = Provider.of<ListProvider>(context);
+    if (listProvider.tasksList.isEmpty) {
+      listProvider.getAllTaskFromFireStore();
+    }
     var mediaQuery = MediaQuery.of(context).size;
     return Column(
       children: [
@@ -36,11 +45,9 @@ class _TasksListScreenState extends State<TasksListScreen> {
                 ),
               ),
               CustomCalendar(
-                selectDate: selectDate,
-                onDateChange: (p0) {
-                  setState(() {
-                    selectDate = p0;
-                  });
+                selectDate: listProvider.selectedDate,
+                onDateChange: (date) {
+                  listProvider.changeSelectedDate(date);
                 },
               ),
             ],
@@ -49,10 +56,10 @@ class _TasksListScreenState extends State<TasksListScreen> {
         Expanded(
             child: ListView.builder(
           itemBuilder: (context, index) {
-            return TaskItemWidget();
+            return TaskItemWidget(task: listProvider.tasksList[index]);
           },
           padding: EdgeInsets.zero,
-          itemCount: 30,
+          itemCount: listProvider.tasksList.length,
         ))
       ],
     );
